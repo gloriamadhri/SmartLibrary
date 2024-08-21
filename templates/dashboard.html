@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Smart Library</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+<body>
+	
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+	
+<!-- header -->
+<div class="top-header-area" id="sticker">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 text-center">
+        <div class="main-menu-wrap">
+          <!-- logo -->
+          <div class="site-logo">
+            <a href="">
+              <img src="assets/img/logo.png" alt="">
+            </a>
+          </div>
+          <!-- logo -->
+
+          <!-- menu start -->
+          <nav class="main-menu">
+            <ul>
+              
+              <li>
+                <div class="header-icons">
+                  
+                  <a class="mobile-hide search-bar-icon" href="{{url_for('logout')}}">Logout</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+          <div class="mobile-menu"></div>
+          <!-- menu end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end header -->
+	
+	
+
+	<!-- hero area -->
+	<div class="hero-area hero-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<p class="subtitle">Your Digital Book Haven</p>
+							{% if user %}
+  <h1>Welcome {{user[1]}} !</h1>
+  <h3 style="color: aliceblue;">Current Books to Explore: {{book_count}}</h3>
+  {%endif%}
+							<div class="hero-btns">
+								<a href="{{url_for('recommend')}}" class="boxed-btn">Go to Recommender</a>
+                <a href="{{url_for('display')}}" class="boxed-btn">Show Book Listing</a>
+                <a href="{{url_for('add_book')}}" class="boxed-btn">Add a New Book</a>
+                <a href="{{url_for('search_book')}}" class="boxed-btn">Search a Book</a>
+                <a href="{{url_for('delete_book')}}" class="boxed-btn">Delete a Book</a>
+								<a href="{{url_for('visual')}}" class="boxed-btn">Visuals</a></div>
+                
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		
+		
+	<!-- end hero area -->
+	<!-- product section -->
+    {% if books%}
+    <table>
+      <thead>
+        <tr>
+          <th>ISBN</th>
+          <th>Book Title</th>
+          <th>Book Author</th>
+          <th>Year of Publication</th>
+          <th>Publisher</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(30) %}
+<tr>
+<td>{{ books[i][0] }}</td>
+<td>{{ books[i][1] }}</td>
+<td>{{ books[i][2] }}</td>
+<td>{{ books[i][3] }}</td>
+<td>{{ books[i][4] }}</td>
+</tr>
+{% endfor %}
+      </tbody>
+    </table>
+  
+
+    {% endif %}
+  
+    
+ 
+<!-- end product section -->
+
+	
+	<!-- jquery -->
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- isotope -->
+	<script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>
+
+  
+
+ 
+
